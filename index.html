@@ -26,8 +26,52 @@
 		<nav>
 		    <ul id="position">
 		    </ul>
-	  	</nav>
+	  </nav>
 	</section>
+  <div class="nav">
+    <div>租金： <span>￥7元/天</span></div>
+    <div>押金： <span>￥7元/天</span></div>
+    <div>起租： <span>30天</span></div>
+  </div>
+  <div class="info">
+    <p>巴拉巴巴爸爸爸爸拉拉巴拉拉巴拉巴拉拉巴拉拉不拉了拉巴黎宝贝</p>
+    <p>北京市  朝阳区 望京</p>
+    <p>巴拉巴巴爸爸爸爸拉拉巴拉拉巴拉巴拉拉巴拉拉不拉了拉巴黎宝贝</p>
+  </div>
+  <div class="intro">
+    <ul>
+      <li>
+        <div>
+          <h3>免责保障</h3>
+          <p>文字</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>免责保障</h3>
+          <p>文字</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>免责保障</h3>
+          <p>文字</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>免责保障</h3>
+          <p>文字</p>
+        </div>
+      </li>
+       <li>
+        <div>
+          <h3>免责保障</h3>
+          <p>文字</p>
+        </div>
+      </li>
+    </ul>
+  </div>
   <!-- 底部fixed 开始 -->
   <div class="foot-fixed">
     <p>这是你心怡的商品吗，</p>
@@ -44,12 +88,13 @@
   	for (var i = 0; i<imgLength;i++){
   		$('#position').append('<li></li>')
   	}
+    //var navWidth = $('#position').css('width')
+
   	var slider =
   	  Swipe(document.getElementById('slider'), {
   	    auto: 3000,
   	    continuous: true,
   	    callback: function(pos) {
-
   	      var i = bullets.length;
   	      while (i--) {
   	        bullets[i].className = ' ';

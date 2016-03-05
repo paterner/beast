@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f1f3;
+  background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   margin-bottom: 58px;
 }
@@ -7,7 +7,8 @@ body {
 	font-size: 16px;
 	height: 50px;
 	line-height: 50px;
-	display: flex;
+  display: flex;
+	display: -webkit-flex;
 	-webkit-flex-direction:row;
 	flex-direction:row;
 	-webkit-justify-content:center;
@@ -35,6 +36,9 @@ body {
 .swipe-wrap img{
 	width: 100%
 }
+.swipe-wrapper{
+  position: relative;
+}
 .swipe-wrapper nav #position {
   text-align: center;
   list-style: none;
@@ -61,6 +65,56 @@ body {
   background-image: -o-linear-gradient(top,#1293dc,#0f6297);
   background-image: linear-gradient(top,#1293dc,#0f6297);
 }
+
+/*nav*/
+div.nav{
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-direction:row;
+  flex-direction:row;
+
+}
+div.nav div{
+  flex: 1;
+  -webkit-flex: 1;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid #000;
+}
+div.nav div:last-child{
+  border-right: 0px;
+}
+div.nav div span{
+  color: #ee527b;
+}
+
+div.info{
+  padding: 10px;
+  background-color: #f9f9f9;
+  padding-bottom: 20px;
+  font-size: 12px;
+}
+
+div.intro ul li{
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: 12px;
+  color: #666;
+}
+div.intro ul li h3{
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 10px;
+}
+div.intro ul li div{
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+}
+
+div.intro ul li div p{
+  padding-left: 10px;
+}
+
 .back-btn {
   position: absolute;
   width: 25px;
