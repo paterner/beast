@@ -1,1 +1,61 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+	<title>game</title>
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/beast.css" />
+</head>
+<body>
+	<header class="header">
+		<div>
+			<a href="###"></a>
+		</div>
+		宝贝详情
+		<div>
+			<i></i>
+			<i></i>
+		</div>
+	</header>
+
+	<section class="swipe-wrapper">
+		<div id="slider" class="swipe">
+		  <div class="swipe-wrap">
+		    <div><img src="img/swipe.png" alt=""></div>
+		    <div><img src="img/swipe.png" alt=""></div>
+		    <div><img src="img/swipe.png" alt=""></div>
+		  </div>
+		</div>
+		<nav>
+		    <ul id="position">
+		    </ul>
+	  	</nav>
+	</section>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/swipe.js"></script>
+<script>
+$(function() {
+	var imgLength = $('.swipe-wrap').find('img').length;
+	for (var i = 0; i<imgLength;i++){
+		$('#position').append('<li></li>')
+	}
+	var slider =
+	  Swipe(document.getElementById('slider'), {
+	    auto: 3000,
+	    continuous: true,
+	    callback: function(pos) {
+
+	      var i = bullets.length;
+	      while (i--) {
+	        bullets[i].className = ' ';
+	      }
+	      bullets[pos].className = 'on';
+	    }
+	  });
+	var bullets = document.getElementById('position').getElementsByTagName('li');
+})
+</script>
+</html>
