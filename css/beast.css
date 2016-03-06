@@ -324,7 +324,6 @@ body {
   white-space: nowrap;
   overflow: hidden;
   overflow-x: auto;
-  margin-bottom: 25px;
 }
 .comment-special-item .comment-summary-imglist li{
   display: inline-block;
@@ -344,15 +343,14 @@ body {
 }
 .comment-summary-bottom {
   width: 100%;
-  padding: 10px 0 0;
+  height: 25px;
+  line-height: 25px;
+  padding: 10px 20px 0;
   text-align: right;
   color: #484848;
   font-size: 13px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  position: absolute;
-  right: 20px;
-  bottom: 15px;
 }
 .comment-summary-bottom span {
   margin-left: 20px;
@@ -403,7 +401,4 @@ body {
 }
 .swipe-img-detail.swipe-wrapper nav {
   /*display: none;*/
-}
-.swipe-img-detail.swipe-wrapper img {
-  height: auto;
 }
