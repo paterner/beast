@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f0f1f3;
   font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   margin-bottom: 58px;
 }
@@ -28,16 +28,26 @@ body {
   overflow: hidden;
   position: relative;
 }
+.header-swipe-wrapper {
+  height: 320px;
+}
 .swipe-wrap > div {
   float:left;
   width:100%;
   position: relative;
 }
 .swipe-wrap img{
-	width: 100%
+	width: 100%;
+  height: 320px;
 }
 .swipe-wrapper{
   position: relative;
+}
+.swipe-wrapper nav {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 25px;
 }
 .swipe-wrapper nav #position {
   text-align: center;
@@ -47,72 +57,145 @@ body {
 }
 .swipe-wrapper nav #position li {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  background: #141414;
-  box-shadow: inset 0 1px 3px black,0 0 1px 1px #202020;
-  margin: 0 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: #fff;
+  /*box-shadow: inset 0 1px 3px black,0 0 1px 1px #202020;*/
+  margin: 0 7px;
   cursor: pointer;
 }
 .swipe-wrapper nav #position li.on {
-  box-shadow: inset 0 1px 3px -1px #28b4ea,0 1px 2px rgba(0,0,0,.5);
-  background-color: #1293dc;
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#1293dc),color-stop(100%,#0f6297));
-  background-image: -webkit-linear-gradient(top,#1293dc,#0f6297);
-  background-image: -moz-linear-gradient(top,#1293dc,#0f6297);
-  background-image: -ms-linear-gradient(top,#1293dc,#0f6297);
-  background-image: -o-linear-gradient(top,#1293dc,#0f6297);
-  background-image: linear-gradient(top,#1293dc,#0f6297);
+  background: #ff3758;
 }
 
 /*nav*/
-div.nav{
+.nav{
   display: flex;
   display: -webkit-flex;
   -webkit-flex-direction:row;
   flex-direction:row;
-
+  border-top: 2px solid #e4e4e4;
+  padding: 15px 0;
+  background-color: #fff;
 }
-div.nav div{
+.nav div{
   flex: 1;
   -webkit-flex: 1;
   font-size: 12px;
   text-align: center;
-  border-right: 1px solid #000;
+  border-right: 1px solid #d9d9d9;
+  position: relative;
+  text-indent: 25px;
 }
-div.nav div:last-child{
+.nav div:last-child{
   border-right: 0px;
 }
-div.nav div span{
+.nav div span{
   color: #ee527b;
 }
-
-div.info{
+.nav div i{
+  position: absolute;
+  left: 10px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #000;
+}
+.nav div i.zujin {
+  background: url(../img/dollar.png) no-repeat;
+  background-size: 15px 15px;
+  -webkit-background-size: 15px 15px;
+}
+.nav div i.yajin {
+  background: url(../img/coin.png) no-repeat;
+  background-size: 15px 15px;
+  -webkit-background-size: 15px 15px;
+}
+.nav div i.qizu {
+  background: url(../img/calendar.png) no-repeat;
+  background-size: 15px 15px;
+  -webkit-background-size: 15px 15px;
+}
+.info{
   padding: 10px;
   background-color: #f9f9f9;
-  padding-bottom: 20px;
-  font-size: 12px;
-}
-
-div.intro ul li{
-  padding: 10px;
-  padding-bottom: 0px;
-  font-size: 12px;
-  color: #666;
-}
-div.intro ul li h3{
+  padding-bottom: 35px;
   font-size: 14px;
-  color: #000;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  color: #484848;
   margin-bottom: 10px;
 }
-div.intro ul li div{
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
+.info .position,
+.info .price {
+  float: left;
+  color: #9c9c9c;
+  position: relative;
+  text-indent: 18px;
+  margin-top: 10px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.info .price {
+  margin-left: 20px;
+}
+.info .position i,
+.info .price i{
+  position: absolute;
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: url(../img/map.png) no-repeat;
+  background-size: 10px 12px;
+  -webkit-background-size: 10px 12px;
+}
+.info .price i{
+  background: url(../img/label.png) no-repeat;
+  background-size: 10px 12px;
+  -webkit-background-size: 10px 12px;
+}
+.info .price {
+  float: left;
+}
+.intro {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.intro ul {
+  padding: 0 10px;
+}
+.intro ul li{
+  padding: 10px 0;
+  font-size: 12px;
+  color: #666;
+  border-bottom: 1px solid #9b9b9b;
+  position: relative;
+}
+.intro ul li .list-left {
+  position: absolute;
+  width: 22px;
+}
+.intro ul li .list-left img {
+  width: 22px;
+  height: 22px;
+}
+.intro ul li .list-right {
+  margin-left: 30px;
+}
+.intro ul li h3{
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
 }
 
-div.intro ul li div p{
-  padding-left: 10px;
+.intro ul li div p{
+  font-size: 13px;
+  color: #949494;
+  line-height: 17px;
 }
 
 .back-btn {
@@ -146,7 +229,8 @@ div.intro ul li div p{
   -webkit-box-sizing: border-box;
   border-top: 2px solid #cdcdcd;
   position: fixed;
-  background-color: #fff;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
   bottom: 0;
   left: 0;
   z-index: 99;
@@ -248,7 +332,47 @@ div.intro ul li div p{
   width: 90px;
   height: 90px;
 }
-
+.comment-summary-bottom {
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  padding: 10px 20px 0;
+  text-align: right;
+  color: #484848;
+  font-size: 13px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.comment-summary-bottom span {
+  margin-left: 20px;
+  padding-left: 25px;
+  position: relative;
+}
+.comment-summary-bottom span i {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.comment-summary-bottom .dianzan i {
+  background: url(../img/unlike.png) no-repeat;
+  background-size: 18px 18px;
+  -webkit-background-size: 18px 18px;
+}
+.comment-summary-bottom .pinglun i {
+  top: 0px;
+  background: url(../img/comment.png) no-repeat;
+  background-size: 18px 14px;
+  -webkit-background-size: 18px 14px;
+}
+.comment-summary-bottom .zhuanfa i {
+  top: -1px;
+  background: url(../img/share.png) no-repeat;
+  background-size: 18px 14px;
+  -webkit-background-size: 18px 14px;
+}
 .coverWrapper{
   width: 100%;
   height: 100%;
@@ -265,4 +389,7 @@ div.intro ul li div p{
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items:center;
+}
+.swipe-img-detail.swipe-wrapper nav {
+  /*display: none;*/
 }
