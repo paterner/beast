@@ -401,3 +401,6 @@ body {
 .swipe-img-detail.swipe-wrapper nav {
   /*display: none;*/
 }
+.swipe-img-detail.swipe-wrapper img {
+  height: auto;
+}
