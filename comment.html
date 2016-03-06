@@ -111,7 +111,7 @@
       $('.coverWrapper').addClass('show');
       Index = $(this).parent('li').index();
       $('#position').find('li').eq(Index).addClass('on');
-      var slider =
+      slider =
       Swipe(document.getElementById('slider'), {
         startSlide: Index,
         auto: false,
@@ -134,7 +134,7 @@
     $('.coverWrapper').on('click', function(){
       $(this).removeClass('show');
       $('#position').find('li').removeClass('on');
-      slider = null;
+      slider.kill();
     })
   });
 </script>
