@@ -106,10 +106,9 @@
       for (var i = 0; i<imgLength;i++){
         $('#position').append('<li></li>')
       }
-      $('#position').find('li').eq(0).addClass('on');
       $('.coverWrapper').addClass('show');
       var Index = $(this).parent('li').index();
-
+      $('#position').find('li').eq(Index).addClass('on');
       var slider =
       Swipe(document.getElementById('slider'), {
         startSlide: Index,
