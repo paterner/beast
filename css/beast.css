@@ -248,3 +248,18 @@ div.intro ul li div p{
   width: 90px;
   height: 90px;
 }
+
+.coverWrapper{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, 0.9);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.coverWrapper.show{
+  display: flex;
+}

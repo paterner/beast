@@ -69,13 +69,58 @@
     <a href="##" class="download-btn">下载</a>
   </div>
   <!-- 底部fixed 结束 -->
-  
+  <!-- 弹层 -->
+  <section class="swipe-wrapper">
+    <div class="coverWrapper">
+      <div id="slider" class="swipe">
+        <div class="swipe-wrap">
+          <div><img src="img/swipe.png" alt=""></div>
+          <div><img src="img/temp1.jpg" alt=""></div>
+          <div><img src="img/temp2.jpg" alt=""></div>
+          <div><img src="img/swipe.png" alt=""></div>
+          <div><img src="img/temp1.jpg" alt=""></div>
+          <div><img src="img/temp2.jpg" alt=""></div>
+        </div>
+        <nav>
+            <ul id="position">
+            </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
 </body>
 <script src="js/zepto.min.js"></script>
 <script src="js/swipe.js"></script>
 <script>
   $(function() {
+    $('ul.comment-summary-imglist li').find('img').on('click', function(){
+      var imgLength = $('ul.comment-summary-imglist li').length;
+      for (var i = 0; i<imgLength;i++){
+        $('#position').append('<li></li>')
+      }
+      $('#position').find('li').eq(0).addClass('on');
+      $('.coverWrapper').addClass('show');
+      var Index = $(this).parent('li').index();
+      var slider =
+      Swipe(document.getElementById('slider'), {
+        startSlide: Index,
+        auto: false,
+        continuous: true,
+        callback: function(pos) {
+          var i = bullets.length;
+          while (i--) {
+            bullets[i].className = ' ';
+          }
+          bullets[pos].className = 'on';
+        }
+      });
+    var bullets = document.getElementById('position').getElementsByTagName('li');
 
+    $('.coverWrapper').on('click', function(){
+      $(this).removeClass('show');
+      $('#position').find('li').removeClass('on');
+    })
+    })
   });
 </script>
 </html>
