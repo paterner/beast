@@ -262,4 +262,7 @@ div.intro ul li div p{
 
 .coverWrapper.show{
   display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items:center;
 }
