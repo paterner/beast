@@ -36,11 +36,6 @@
           <li><img src="img/temp2.jpg" alt=""></li>
           <li><img src="img/test.png" alt=""></li>
         </ul>
-        <div class="comment-summary-bottom">
-          <span class="dianzan"><i></i>100</span>
-          <span class="pinglun"><i></i>187</span>
-          <span class="zhuanfa"><i></i>154</span>
-        </div>
       </li>
       <!-- 带图评论 结束 -->
       <!-- 普通评论 开始 -->
@@ -76,7 +71,7 @@
   </div>
   <!-- 底部fixed 结束 -->
   <!-- 弹层 -->
-  <section class="swipe-wrapper swipe-img-detail">
+  <section class="swipe-wrapper">
     <div class="coverWrapper">
       <div id="slider" class="swipe">
         <div class="swipe-wrap">
@@ -100,13 +95,15 @@
 <script src="js/swipe.js"></script>
 <script>
   $(function() {
+    var imgLength = $('ul.comment-summary-imglist li').length;
+    for (var i = 0; i<imgLength;i++){
+      $('#position').append('<li></li>')
+    }
+    var slider = null;
+    var Index = 0
     $('ul.comment-summary-imglist li').find('img').on('click', function(){
-      var imgLength = $('ul.comment-summary-imglist li').length;
-      for (var i = 0; i<imgLength;i++){
-        $('#position').append('<li></li>')
-      }
       $('.coverWrapper').addClass('show');
-      var Index = $(this).parent('li').index();
+      Index = $(this).parent('li').index();
       $('#position').find('li').eq(Index).addClass('on');
       var slider =
       Swipe(document.getElementById('slider'), {
@@ -131,7 +128,7 @@
     $('.coverWrapper').on('click', function(){
       $(this).removeClass('show');
       $('#position').find('li').removeClass('on');
-      $('#position').html('');
+      slider = null;
     })
   });
 </script>
